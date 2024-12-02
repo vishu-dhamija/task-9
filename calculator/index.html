@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        input, button {
+            margin:4px 1px;
+        }
+        .cont{
+            background-color: rgb(190, 184, 182);
+            border: 2px solid black;
+    
+            height: auto;
+            width: 40vw;
+        }
+    </style>
+</head>
+<body>
+<div class="cont">
+    <h2>Calculator</h2>
+    <div>First Number: </div>
+    <input type="text" id="first">
+
+    <div>Second Number: </div>
+    <input type="text" id="second"><br>
+
+    <button onclick="add()">Addition</button>
+    <button onclick="subtract()">Subtraction</button>
+    <button onclick="multiply()">Multiplication</button>
+    <button onclick="divide()">Division</button><br>
+
+    <h3 class="res">Result: <span id="result"></span></h3>
+</div>
+    <script>
+        function add() {
+            var num1 = Number(document.getElementById("first").value);
+            var num2 = Number(document.getElementById("second").value);
+            var result = num1 + num2;
+            document.getElementById("result").innerText = result;
+        }
+
+        function subtract() {
+            var num1 = Number(document.getElementById("first").value);
+            var num2 = Number(document.getElementById("second").value);
+            var result = num1 - num2;
+            document.getElementById("result").innerText = result;
+        }
+
+        function multiply() {
+            var num1 = Number(document.getElementById("first").value);
+            var num2 = Number(document.getElementById("second").value);
+            var result = num1 * num2;
+            document.getElementById("result").innerText = result;
+        }
+
+        function divide() {
+            var num1 = Number(document.getElementById("first").value);
+            var num2 = Number(document.getElementById("second").value);
+            var result = num2 !== 0 ? num1 / num2 : "Cannot divide by zero";
+            document.getElementById("result").innerText = result;
+        }
+    </script>
+
+</body>
+</html>
